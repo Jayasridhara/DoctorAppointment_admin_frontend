@@ -46,7 +46,7 @@ const AddDoctor = () => {
     //       console.log(`${key}: ${value}`);
     //   });
 
-      const { data } = await axios.post('http://localhost:5000/api/admin/add-doctor', formData, { headers: { aToken } })
+      const { data } = await axios.post('https://doctorappointment-backend-bfnr.onrender.com/api/admin/add-doctor', formData, { headers: { aToken } })
       if (data.success) {
           toast.success(data.message)
           setDocImg(false)

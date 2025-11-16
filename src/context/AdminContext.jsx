@@ -15,7 +15,7 @@ const AdminContextProvider = (props) => {
 
     const getAllDoctors = async () => {
         try {
-            const { data } = await axios.get('http://localhost:5000/api/admin/all-doctors', {headers: { aToken }});
+            const { data } = await axios.get('https://doctorappointment-backend-bfnr.onrender.com/api/admin/all-doctors', {headers: { aToken }});
             if(data.success){
                 setDoctors(data.doctors);
             }
@@ -29,7 +29,7 @@ const AdminContextProvider = (props) => {
 
     const changeAvailability = async (docId) => {
         try {
-            const { data } = await axios.post('http://localhost:5000/api/admin/change-availability', { docId }, {headers: { aToken }});
+            const { data } = await axios.post('https://doctorappointment-backend-bfnr.onrender.com/api/admin/change-availability', { docId }, {headers: { aToken }});
             if(data.success){
                 toast.success(data.message);
                 getAllDoctors();
@@ -45,7 +45,7 @@ const AdminContextProvider = (props) => {
 
     const getAllAppointments = async () => {
         try {
-            const { data } = await axios.get('http://localhost:5000/api/admin/appointments', {headers: { aToken }});
+            const { data } = await axios.get('https://doctorappointment-backend-bfnr.onrender.com/api/admin/appointments', {headers: { aToken }});
             if(data.success){
                 setAppointments(data.appointments.reverse());
             }
@@ -60,7 +60,7 @@ const AdminContextProvider = (props) => {
 
     const getDashData = async () => {
         try {
-            const { data } = await axios.get('http://localhost:5000/api/admin/dashboard', { headers: { aToken }});
+            const { data } = await axios.get('https://doctorappointment-backend-bfnr.onrender.com/api/admin/dashboard', { headers: { aToken }});
             if(data.success){
                 setDashData(data.dashData);
             }

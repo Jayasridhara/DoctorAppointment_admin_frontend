@@ -21,7 +21,7 @@ const DoctorProfile = () => {
                 available: profileData.available
             }
 
-            const { data } = await axios.post('http://localhost:5000/api/doctor/update-profile', updateData, { headers: { dToken } })
+            const { data } = await axios.post('https://doctorappointment-backend-bfnr.onrender.com/api/doctor/update-profile', updateData, { headers: { dToken } })
 
             if (data.success) {
                 toast.success(data.message)
