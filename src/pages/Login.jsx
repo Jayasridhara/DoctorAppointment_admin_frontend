@@ -25,7 +25,7 @@ const Login = () => {
     try {
       if (state === 'Admin') {
 
-        const { data } = await axios.post('https://doctorappointment-backend-bfnr.onrender.com/api/admin/login', { email, password })
+        const { data } = await axios.post('https://prescripto-backend-1af3.onrender.com/api/admin/login', { email, password })
         if (data.success) {
           setAToken(data.token)
           localStorage.setItem('aToken', data.token);
@@ -36,7 +36,7 @@ const Login = () => {
   
       } else {
   
-        const { data } = await axios.post('https://doctorappointment-backend-bfnr.onrender.com/api/doctor/login', { email, password })
+        const { data } = await axios.post('https://prescripto-backend-1af3.onrender.com/api/doctor/login', { email, password })
         if (data.success) {
           setDToken(data.token)
           localStorage.setItem('dToken', data.token)

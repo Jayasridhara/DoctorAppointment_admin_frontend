@@ -21,7 +21,7 @@ const DoctorsList = () => {
   // Remove Doctor
   const removeDoctor = async (id) => {
     try {
-      const response = await axios.post('https://doctorappointment-backend-bfnr.onrender.com/api/admin/remove-doctor', { id }, { headers: { aToken } });
+      const response = await axios.post('https://prescripto-backend-1af3.onrender.com/api/admin/remove-doctor', { id }, { headers: { aToken } });
       if (response.data.success) {
         toast.success(response.data.message);
         await getAllDoctors();
